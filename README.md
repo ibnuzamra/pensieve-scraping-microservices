@@ -35,7 +35,9 @@ MONITORING
 Add Helm Repositories for Prometheus and Grafana charts. Run the following commands to add the repositories:
 
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
 helm repo add grafana https://grafana.github.io/helm-charts
+
 helm repo update
 
 Install Prometheus. Use Helm to install Prometheus with the following command:
@@ -57,11 +59,13 @@ LOGGING
 Add the Elastic Helm charts repository
 
 helm repo add elastic https://helm.elastic.co
+
 helm repo update
 
 Install the ELK stack using Helm:
 
 helm install my-elk elastic/eck-operator
+
 helm install my-elk-logging elastic/logging -f my-elk-values.yaml
 
 
@@ -73,7 +77,9 @@ For securing the sensitive environment variables, we can use external secrets li
 Add the External Secret Helm charts repository
 
 helm repo add external-secrets https://charts.external-secrets.io
+
 kubectl create namespace external-secrets
+
 helm install external-secrets external-secrets/external-secrets -n external-secrets
 
 Deploy secret store
